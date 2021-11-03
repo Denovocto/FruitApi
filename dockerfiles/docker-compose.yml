@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  db:
+    container_name: fruitDatabase
+    build:
+      context: .
+      dockerfile: db.dockerfile
+    environment:
+      SA_PASSWORD: "iLoveFruits@123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1433:1433
+    cpus: 1.5
+    mem_limit: 2G
+    memswap_limit: 3G
